@@ -1,0 +1,12 @@
+---
+
+- name: start sshd
+  service:
+    name: sshd
+    enabled: yes
+    state: started
+
+- name: stop sshd
+  service:
+    name: sshd
+    state: stopped
