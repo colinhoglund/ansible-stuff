@@ -1,0 +1,237 @@
+{% for env in sshd_acceptenv %}
+AcceptEnv {{ env }}
+{% endif %}
+{% if sshd_addressfamily is defined %}
+AddressFamily {{ sshd_addressfamily }}
+{% endif %}
+{% if sshd_allowagentforwarding is defined %}
+AllowAgentForwarding {{ sshd_allowagentforwarding }}
+{% endif %}
+{% if sshd_allowgroups is defined %}
+AllowGroups {{ sshd_allowgroups }}
+{% endif %}
+{% if sshd_allowtcpforwarding is defined %}
+AllowTcpForwarding {{ sshd_allowtcpforwarding }}
+{% endif %}
+{% if sshd_allowusers is defined %}
+AllowUsers {{ sshd_allowusers }}
+{% endif %}
+{% if sshd_authenticationmethods is defined %}
+AuthenticationMethods {{ sshd_authenticationmethods }}
+{% endif %}
+{% if sshd_authorizedkeyscommand is defined %}
+AuthorizedKeysCommand {{ sshd_authorizedkeyscommand }}
+{% endif %}
+{% if sshd_authorizedkeyscommanduser is defined %}
+AuthorizedKeysCommandUser {{ sshd_authorizedkeyscommanduser }}
+{% endif %}
+{% if sshd_authorizedkeysfile is defined %}
+AuthorizedKeysFile {{ sshd_authorizedkeysfile }}
+{% endif %}
+{% if sshd_authorizedprincipalsfile is defined %}
+AuthorizedPrincipalsFile {{ sshd_authorizedprincipalsfile }}
+{% endif %}
+{% if sshd_banner is defined %}
+Banner {{ sshd_banner }}
+{% endif %}
+{% if sshd_challengeresponseauthentication is defined %}
+ChallengeResponseAuthentication {{ sshd_challengeresponseauthentication }}
+{% endif %}
+{% if sshd_chrootdirectory is defined %}
+ChrootDirectory {{ sshd_chrootdirectory }}
+{% endif %}
+{% if sshd_ciphers is defined %}
+Ciphers {{ sshd_ciphers }}
+{% endif %}
+{% if sshd_clientalivecountmax is defined %}
+ClientAliveCountMax {{ sshd_clientalivecountmax }}
+{% endif %}
+{% if sshd_clientaliveinterval is defined %}
+ClientAliveInterval {{ sshd_clientaliveinterval }}
+{% endif %}
+{% if sshd_compression is defined %}
+Compression {{ sshd_compression }}
+{% endif %}
+{% if sshd_denygroups is defined %}
+DenyGroups {{ sshd_denygroups }}
+{% endif %}
+{% if sshd_denyusers is defined %}
+DenyUsers {{ sshd_denyusers }}
+{% endif %}
+{% if sshd_forcecommand is defined %}
+ForceCommand {{ sshd_forcecommand }}
+{% endif %}
+{% if sshd_gatewayports is defined %}
+GatewayPorts {{ sshd_gatewayports }}
+{% endif %}
+{% if sshd_gssapiauthentication is defined %}
+GSSAPIAuthentication {{ sshd_gssapiauthentication }}
+{% endif %}
+{% if sshd_gssapicleanupcredentials is defined %}
+GSSAPICleanupCredentials {{ sshd_gssapicleanupcredentials }}
+{% endif %}
+{% if sshd_hostbasedauthentication is defined %}
+HostbasedAuthentication {{ sshd_hostbasedauthentication }}
+{% endif %}
+{% if sshd_hostbasedusesnamefrompacketonly is defined %}
+HostbasedUsesNameFromPacketOnly {{ sshd_hostbasedusesnamefrompacketonly }}
+{% endif %}
+{% if sshd_hostcertificate is defined %}
+HostCertificate {{ sshd_hostcertificate }}
+{% endif %}
+{% for key in sshd_hostkey %}
+HostKey {{ key }}
+{% endif %}
+{% if sshd_hostkeyagent is defined %}
+HostKeyAgent {{ sshd_hostkeyagent }}
+{% endif %}
+{% if sshd_ignorerhosts is defined %}
+IgnoreRhosts {{ sshd_ignorerhosts }}
+{% endif %}
+{% if sshd_ignoreuserknownhosts is defined %}
+IgnoreUserKnownHosts {{ sshd_ignoreuserknownhosts }}
+{% endif %}
+{% if sshd_ipqos is defined %}
+IPQoS {{ sshd_ipqos }}
+{% endif %}
+{% if sshd_kbdinteractiveauthentication is defined %}
+KbdInteractiveAuthentication {{ sshd_kbdinteractiveauthentication }}
+{% endif %}
+{% if sshd_kerberosauthentication is defined %}
+KerberosAuthentication {{ sshd_kerberosauthentication }}
+{% endif %}
+{% if sshd_kerberosgetafstoken is defined %}
+KerberosGetAFSToken {{ sshd_kerberosgetafstoken }}
+{% endif %}
+{% if sshd_kerberosorlocalpasswd is defined %}
+KerberosOrLocalPasswd {{ sshd_kerberosorlocalpasswd }}
+{% endif %}
+{% if sshd_kerberosticketcleanup is defined %}
+KerberosTicketCleanup {{ sshd_kerberosticketcleanup }}
+{% endif %}
+{% if sshd_kexalgorithms is defined %}
+KexAlgorithms {{ sshd_kexalgorithms }}
+{% endif %}
+{% if sshd_keyregenerationinterval is defined %}
+KeyRegenerationInterval {{ sshd_keyregenerationinterval }}
+{% endif %}
+{% if sshd_listenaddress is defined %}
+ListenAddress {{ sshd_listenaddress }}
+{% endif %}
+{% if sshd_logingracetime is defined %}
+LoginGraceTime {{ sshd_logingracetime }}
+{% endif %}
+{% if sshd_loglevel is defined %}
+LogLevel {{ sshd_loglevel }}
+{% endif %}
+{% if sshd_macs is defined %}
+MACs {{ sshd_macs }}
+{% endif %}
+{% if sshd_match is defined %}
+Match {{ sshd_match }}
+{% endif %}
+{% if sshd_maxauthtries is defined %}
+MaxAuthTries {{ sshd_maxauthtries }}
+{% endif %}
+{% if sshd_maxsessions is defined %}
+MaxSessions {{ sshd_maxsessions }}
+{% endif %}
+{% if sshd_maxstartups is defined %}
+MaxStartups {{ sshd_maxstartups }}
+{% endif %}
+{% if sshd_passwordauthentication is defined %}
+PasswordAuthentication {{ sshd_passwordauthentication }}
+{% endif %}
+{% if sshd_permitemptypasswords is defined %}
+PermitEmptyPasswords {{ sshd_permitemptypasswords }}
+{% endif %}
+{% if sshd_permitopen is defined %}
+PermitOpen {{ sshd_permitopen }}
+{% endif %}
+{% if sshd_permitrootlogin is defined %}
+PermitRootLogin {{ sshd_permitrootlogin }}
+{% endif %}
+{% if sshd_permittunnel is defined %}
+PermitTunnel {{ sshd_permittunnel }}
+{% endif %}
+{% if sshd_permittty is defined %}
+PermitTTY {{ sshd_permittty }}
+{% endif %}
+{% if sshd_permituserenvironment is defined %}
+PermitUserEnvironment {{ sshd_permituserenvironment }}
+{% endif %}
+{% if sshd_pidfile is defined %}
+PidFile {{ sshd_pidfile }}
+{% endif %}
+{% if sshd_port is defined %}
+Port {{ sshd_port }}
+{% endif %}
+{% if sshd_printlastlog is defined %}
+PrintLastLog {{ sshd_printlastlog }}
+{% endif %}
+{% if sshd_printmotd is defined %}
+PrintMotd {{ sshd_printmotd }}
+{% endif %}
+{% if sshd_protocol is defined %}
+Protocol {{ sshd_protocol }}
+{% endif %}
+{% if sshd_pubkeyauthentication is defined %}
+PubkeyAuthentication {{ sshd_pubkeyauthentication }}
+{% endif %}
+{% if sshd_rekeylimit is defined %}
+RekeyLimit {{ sshd_rekeylimit }}
+{% endif %}
+{% if sshd_revokedkeys is defined %}
+RevokedKeys {{ sshd_revokedkeys }}
+{% endif %}
+{% if sshd_rhostsrsaauthentication is defined %}
+RhostsRSAAuthentication {{ sshd_rhostsrsaauthentication }}
+{% endif %}
+{% if sshd_rsaauthentication is defined %}
+RSAAuthentication {{ sshd_rsaauthentication }}
+{% endif %}
+{% if sshd_serverkeybits is defined %}
+ServerKeyBits {{ sshd_serverkeybits }}
+{% endif %}
+{% if sshd_strictmodes is defined %}
+StrictModes {{ sshd_strictmodes }}
+{% endif %}
+{% if sshd_sftp_subsystem is defined %}
+Subsystem sftp {{ sshd_subsystem }}
+{% endif %}
+{% if sshd_syslogfacility is defined %}
+SyslogFacility {{ sshd_syslogfacility }}
+{% endif %}
+{% if sshd_tcpkeepalive is defined %}
+TCPKeepAlive {{ sshd_tcpkeepalive }}
+{% endif %}
+{% if sshd_trustedusercakeys is defined %}
+TrustedUserCAKeys {{ sshd_trustedusercakeys }}
+{% endif %}
+{% if sshd_usedns is defined %}
+UseDNS {{ sshd_usedns }}
+{% endif %}
+{% if sshd_uselogin is defined %}
+UseLogin {{ sshd_uselogin }}
+{% endif %}
+{% if sshd_usepam is defined %}
+UsePAM {{ sshd_usepam }}
+{% endif %}
+{% if sshd_useprivilegeseparation is defined %}
+UsePrivilegeSeparation {{ sshd_useprivilegeseparation }}
+{% endif %}
+{% if sshd_versionaddendum is defined %}
+VersionAddendum {{ sshd_versionaddendum }}
+{% endif %}
+{% if sshd_x11displayoffset is defined %}
+X11DisplayOffset {{ sshd_x11displayoffset }}
+{% endif %}
+{% if sshd_x11forwarding is defined %}
+X11Forwarding {{ sshd_x11forwarding }}
+{% endif %}
+{% if sshd_x11uselocalhost is defined %}
+X11UseLocalhost {{ sshd_x11uselocalhost }}
+{% endif %}
+{% if sshd_xauthlocation is defined %}
+XAuthLocation {{ sshd_xauthlocation }}
+{% endif %}
