@@ -1,32 +1,33 @@
 ---
-#debian defaults
-sshd_acceptenv: lang lc_*
+
+#shared defaults
 sshd_challengeresponseauthentication: no
-sshd_hostbasedauthentication: no
+
+#debian defaults
+sshd_acceptenv:
+  - 'lang lc_*'
 sshd_hostkey:
   - /etc/ssh/ssh_host_rsa_key
   - /etc/ssh/ssh_host_dsa_key
   - /etc/ssh/ssh_host_ecdsa_key
-sshd_ignorerhosts: yes
-sshd_keyregenerationinterval: 3600
-sshd_logingracetime: 120
-sshd_loglevel: info
-sshd_permitemptypasswords: no
-sshd_permitrootlogin: yes
-sshd_port: 22
-sshd_printlastlog: yes
 sshd_printmotd: no
-sshd_protocol: 2
-sshd_pubkeyauthentication: yes
-sshd_rhostsrsaauthentication: no
-sshd_rsaauthentication: yes
 sshd_serverkeybits: 768
-sshd_strictmodes: yes
-sshd_subsystem: sftp /usr/lib/openssh/sftp-server
-sshd_syslogfacility: auth
-sshd_tcpkeepalive: yes
+sshd_sftp_subsystem: /usr/lib/openssh/sftp-server
 sshd_usedns: no
-sshd_usepam: yes
 sshd_useprivilegeseparation: yes
-sshd_x11displayoffset: 10
-sshd_x11forwarding: yes
+
+#centos7 defaults
+sshd_acceptenv:
+  - 'lang lc_ctype lc_numeric lc_time lc_collate lc_monetary lc_messages'
+  - 'lc_identification lc_all language'
+  - 'lc_paper lc_name lc_address lc_telephone lc_measurement'
+  - 'xmodifiers'
+sshd_gssapiauthentication: yes
+sshd_gssapicleanupcredentials: no
+sshd_hostkey:
+  - /etc/ssh/ssh_host_ecdsa_key
+  - /etc/ssh/ssh_host_ed25519_key
+  - /etc/ssh/ssh_host_rsa_key
+sshd_passwordauthentication: yes
+sshd_sftp_subsystem: /usr/libexec/openssh/sftp-server
+sshd_syslogfacility: authpriv
