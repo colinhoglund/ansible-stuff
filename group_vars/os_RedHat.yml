@@ -1,0 +1,10 @@
+---
+
+vsftpd_conf_file: /etc/vsftpd/vsftpd.conf
+vsftpd_listen: 'no'
+vsftpd_listen_ipv6: 'yes'
+vsftpd_local_umask: '022'
+vsftpd_tcp_wrappers: 'yes'
+vsftpd_userlist_enable: 'yes'
+vsftpd_write_enable: 'yes'
+vsftpd_xferlog_std_format: 'yes'

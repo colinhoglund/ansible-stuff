@@ -1,0 +1,20 @@
+---
+
+- name: Update vsftpd.conf
+  template:
+    src: vsftpd.conf.j2
+    dest: "{{ vsftpd_conf_file }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart vsftpd
+
+- name: Add nologin to /etc/shells
+  shell: grep `which nologin` /etc/shells || echo `which nologin` >> /etc/shells
+
+- name: Ensure vsftpd is enabled and running
+  service:
+    name: vsftpd
+    enabled: yes
+    state: running

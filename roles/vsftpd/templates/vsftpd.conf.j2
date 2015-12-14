@@ -1,0 +1,375 @@
+{% if vsftpd_accept_timeout is defined %}
+accept_timeout={{ vsftpd_accept_timeout }}
+{% endif %}
+{% if vsftpd_allow_anon_ssl is defined %}
+allow_anon_ssl={{ vsftpd_allow_anon_ssl }}
+{% endif %}
+{% if vsftpd_anon_max_rate is defined %}
+anon_max_rate={{ vsftpd_anon_max_rate }}
+{% endif %}
+{% if vsftpd_anon_mkdir_write_enable is defined %}
+anon_mkdir_write_enable={{ vsftpd_anon_mkdir_write_enable }}
+{% endif %}
+{% if vsftpd_anon_other_write_enable is defined %}
+anon_other_write_enable={{ vsftpd_anon_other_write_enable }}
+{% endif %}
+{% if vsftpd_anon_root is defined %}
+anon_root={{ vsftpd_anon_root }}
+{% endif %}
+{% if vsftpd_anon_umask is defined %}
+anon_umask={{ vsftpd_anon_umask }}
+{% endif %}
+{% if vsftpd_anon_upload_enable is defined %}
+anon_upload_enable={{ vsftpd_anon_upload_enable }}
+{% endif %}
+{% if vsftpd_anon_world_readable_only is defined %}
+anon_world_readable_only={{ vsftpd_anon_world_readable_only }}
+{% endif %}
+{% if vsftpd_anonymous_enable is defined %}
+anonymous_enable={{ vsftpd_anonymous_enable }}
+{% endif %}
+{% if vsftpd_ascii_download_enable is defined %}
+ascii_download_enable={{ vsftpd_ascii_download_enable }}
+{% endif %}
+{% if vsftpd_ascii_upload_enable is defined %}
+ascii_upload_enable={{ vsftpd_ascii_upload_enable }}
+{% endif %}
+{% if vsftpd_async_abor_enable is defined %}
+async_abor_enable={{ vsftpd_async_abor_enable }}
+{% endif %}
+{% if vsftpd_background is defined %}
+background={{ vsftpd_background }}
+{% endif %}
+{% if vsftpd_banned_email_file is defined %}
+banned_email_file={{ vsftpd_banned_email_file }}
+{% endif %}
+{% if vsftpd_banner_file is defined %}
+banner_file={{ vsftpd_banner_file }}
+{% endif %}
+{% if vsftpd_ca_certs_file is defined %}
+ca_certs_file={{ vsftpd_ca_certs_file }}
+{% endif %}
+{% if vsftpd_check_shell is defined %}
+check_shell={{ vsftpd_check_shell }}
+{% endif %}
+{% if vsftpd_chmod_enable is defined %}
+chmod_enable={{ vsftpd_chmod_enable }}
+{% endif %}
+{% if vsftpd_chown_upload_mode is defined %}
+chown_upload_mode={{ vsftpd_chown_upload_mode }}
+{% endif %}
+{% if vsftpd_chown_uploads is defined %}
+chown_uploads={{ vsftpd_chown_uploads }}
+{% endif %}
+{% if vsftpd_chown_username is defined %}
+chown_username={{ vsftpd_chown_username }}
+{% endif %}
+{% if vsftpd_chroot_list_enable is defined %}
+chroot_list_enable={{ vsftpd_chroot_list_enable }}
+{% endif %}
+{% if vsftpd_chroot_list_file is defined %}
+chroot_list_file={{ vsftpd_chroot_list_file }}
+{% endif %}
+{% if vsftpd_chroot_local_user is defined %}
+chroot_local_user={{ vsftpd_chroot_local_user }}
+{% endif %}
+{% if vsftpd_cmds_allowed is defined %}
+cmds_allowed={{ vsftpd_cmds_allowed }}
+{% endif %}
+{% if vsftpd_cmds_denied is defined %}
+cmds_denied={{ vsftpd_cmds_denied }}
+{% endif %}
+{% if vsftpd_connect_from_port_20 is defined %}
+connect_from_port_20={{ vsftpd_connect_from_port_20 }}
+{% endif %}
+{% if vsftpd_connect_timeout is defined %}
+connect_timeout={{ vsftpd_connect_timeout }}
+{% endif %}
+{% if vsftpd_data_connection_timeout is defined %}
+data_connection_timeout={{ vsftpd_data_connection_timeout }}
+{% endif %}
+{% if vsftpd_debug_ssl is defined %}
+debug_ssl={{ vsftpd_debug_ssl }}
+{% endif %}
+{% if vsftpd_delay_failed_login is defined %}
+delay_failed_login={{ vsftpd_delay_failed_login }}
+{% endif %}
+{% if vsftpd_delay_successful_login is defined %}
+delay_successful_login={{ vsftpd_delay_successful_login }}
+{% endif %}
+{% if vsftpd_delete_failed_uploads is defined %}
+delete_failed_uploads={{ vsftpd_delete_failed_uploads }}
+{% endif %}
+{% if vsftpd_deny_email_enable is defined %}
+deny_email_enable={{ vsftpd_deny_email_enable }}
+{% endif %}
+{% if vsftpd_deny_file is defined %}
+deny_file={{ vsftpd_deny_file }}
+{% endif %}
+{% if vsftpd_dirlist_enable is defined %}
+dirlist_enable={{ vsftpd_dirlist_enable }}
+{% endif %}
+{% if vsftpd_dirmessage_enable is defined %}
+dirmessage_enable={{ vsftpd_dirmessage_enable }}
+{% endif %}
+{% if vsftpd_download_enable is defined %}
+download_enable={{ vsftpd_download_enable }}
+{% endif %}
+{% if vsftpd_dsa_cert_file is defined %}
+dsa_cert_file={{ vsftpd_dsa_cert_file }}
+{% endif %}
+{% if vsftpd_dsa_private_key_file is defined %}
+dsa_private_key_file={{ vsftpd_dsa_private_key_file }}
+{% endif %}
+{% if vsftpd_dual_log_enable is defined %}
+dual_log_enable={{ vsftpd_dual_log_enable }}
+{% endif %}
+{% if vsftpd_email_password_file is defined %}
+email_password_file={{ vsftpd_email_password_file }}
+{% endif %}
+{% if vsftpd_file_open_mode is defined %}
+file_open_mode={{ vsftpd_file_open_mode }}
+{% endif %}
+{% if vsftpd_force_anon_data_ssl is defined %}
+force_anon_data_ssl={{ vsftpd_force_anon_data_ssl }}
+{% endif %}
+{% if vsftpd_force_anon_logins_ssl is defined %}
+force_anon_logins_ssl={{ vsftpd_force_anon_logins_ssl }}
+{% endif %}
+{% if vsftpd_force_dot_files is defined %}
+force_dot_files={{ vsftpd_force_dot_files }}
+{% endif %}
+{% if vsftpd_force_local_data_ssl is defined %}
+force_local_data_ssl={{ vsftpd_force_local_data_ssl }}
+{% endif %}
+{% if vsftpd_force_local_logins_ssl is defined %}
+force_local_logins_ssl={{ vsftpd_force_local_logins_ssl }}
+{% endif %}
+{% if vsftpd_ftp_data_port is defined %}
+ftp_data_port={{ vsftpd_ftp_data_port }}
+{% endif %}
+{% if vsftpd_ftp_username is defined %}
+ftp_username={{ vsftpd_ftp_username }}
+{% endif %}
+{% if vsftpd_ftpd_banner is defined %}
+ftpd_banner={{ vsftpd_ftpd_banner }}
+{% endif %}
+{% if vsftpd_guest_enable is defined %}
+guest_enable={{ vsftpd_guest_enable }}
+{% endif %}
+{% if vsftpd_guest_username is defined %}
+guest_username={{ vsftpd_guest_username }}
+{% endif %}
+{% if vsftpd_hide_file is defined %}
+hide_file={{ vsftpd_hide_file }}
+{% endif %}
+{% if vsftpd_hide_ids is defined %}
+hide_ids={{ vsftpd_hide_ids }}
+{% endif %}
+{% if vsftpd_idle_session_timeout is defined %}
+idle_session_timeout={{ vsftpd_idle_session_timeout }}
+{% endif %}
+{% if vsftpd_implicit_ssl is defined %}
+implicit_ssl={{ vsftpd_implicit_ssl }}
+{% endif %}
+{% if vsftpd_listen is defined %}
+listen={{ vsftpd_listen }}
+{% endif %}
+{% if vsftpd_listen_address is defined %}
+listen_address={{ vsftpd_listen_address }}
+{% endif %}
+{% if vsftpd_listen_address6 is defined %}
+listen_address6={{ vsftpd_listen_address6 }}
+{% endif %}
+{% if vsftpd_listen_ipv6 is defined %}
+listen_ipv6={{ vsftpd_listen_ipv6 }}
+{% endif %}
+{% if vsftpd_listen_port is defined %}
+listen_port={{ vsftpd_listen_port }}
+{% endif %}
+{% if vsftpd_local_enable is defined %}
+local_enable={{ vsftpd_local_enable }}
+{% endif %}
+{% if vsftpd_local_max_rate is defined %}
+local_max_rate={{ vsftpd_local_max_rate }}
+{% endif %}
+{% if vsftpd_local_root is defined %}
+local_root={{ vsftpd_local_root }}
+{% endif %}
+{% if vsftpd_local_umask is defined %}
+local_umask={{ vsftpd_local_umask }}
+{% endif %}
+{% if vsftpd_lock_upload_files is defined %}
+lock_upload_files={{ vsftpd_lock_upload_files }}
+{% endif %}
+{% if vsftpd_log_ftp_protocol is defined %}
+log_ftp_protocol={{ vsftpd_log_ftp_protocol }}
+{% endif %}
+{% if vsftpd_ls_recurse_enable is defined %}
+ls_recurse_enable={{ vsftpd_ls_recurse_enable }}
+{% endif %}
+{% if vsftpd_max_clients is defined %}
+max_clients={{ vsftpd_max_clients }}
+{% endif %}
+{% if vsftpd_max_login_fails is defined %}
+max_login_fails={{ vsftpd_max_login_fails }}
+{% endif %}
+{% if vsftpd_max_per_ip is defined %}
+max_per_ip={{ vsftpd_max_per_ip }}
+{% endif %}
+{% if vsftpd_mdtm_write is defined %}
+mdtm_write={{ vsftpd_mdtm_write }}
+{% endif %}
+{% if vsftpd_message_file is defined %}
+message_file={{ vsftpd_message_file }}
+{% endif %}
+{% if vsftpd_no_anon_password is defined %}
+no_anon_password={{ vsftpd_no_anon_password }}
+{% endif %}
+{% if vsftpd_no_log_lock is defined %}
+no_log_lock={{ vsftpd_no_log_lock }}
+{% endif %}
+{% if vsftpd_nopriv_user is defined %}
+nopriv_user={{ vsftpd_nopriv_user }}
+{% endif %}
+{% if vsftpd_one_process_model is defined %}
+one_process_model={{ vsftpd_one_process_model }}
+{% endif %}
+{% if vsftpd_pam_service_name is defined %}
+pam_service_name={{ vsftpd_pam_service_name }}
+{% endif %}
+{% if vsftpd_passwd_chroot_enable is defined %}
+passwd_chroot_enable={{ vsftpd_passwd_chroot_enable }}
+{% endif %}
+{% if vsftpd_pasv_addr_resolve is defined %}
+pasv_addr_resolve={{ vsftpd_pasv_addr_resolve }}
+{% endif %}
+{% if vsftpd_pasv_address is defined %}
+pasv_address={{ vsftpd_pasv_address }}
+{% endif %}
+{% if vsftpd_pasv_enable is defined %}
+pasv_enable={{ vsftpd_pasv_enable }}
+{% endif %}
+{% if vsftpd_pasv_max_port is defined %}
+pasv_max_port={{ vsftpd_pasv_max_port }}
+{% endif %}
+{% if vsftpd_pasv_min_port is defined %}
+pasv_min_port={{ vsftpd_pasv_min_port }}
+{% endif %}
+{% if vsftpd_pasv_promiscuous is defined %}
+pasv_promiscuous={{ vsftpd_pasv_promiscuous }}
+{% endif %}
+{% if vsftpd_port_enable is defined %}
+port_enable={{ vsftpd_port_enable }}
+{% endif %}
+{% if vsftpd_port_promiscuous is defined %}
+port_promiscuous={{ vsftpd_port_promiscuous }}
+{% endif %}
+{% if vsftpd_require_cert is defined %}
+require_cert={{ vsftpd_require_cert }}
+{% endif %}
+{% if vsftpd_require_ssl_reuse is defined %}
+require_ssl_reuse={{ vsftpd_require_ssl_reuse }}
+{% endif %}
+{% if vsftpd_rsa_cert_file is defined %}
+rsa_cert_file={{ vsftpd_rsa_cert_file }}
+{% endif %}
+{% if vsftpd_rsa_private_key_file is defined %}
+rsa_private_key_file={{ vsftpd_rsa_private_key_file }}
+{% endif %}
+{% if vsftpd_run_as_launching_user is defined %}
+run_as_launching_user={{ vsftpd_run_as_launching_user }}
+{% endif %}
+{% if vsftpd_secure_chroot_dir is defined %}
+secure_chroot_dir={{ vsftpd_secure_chroot_dir }}
+{% endif %}
+{% if vsftpd_secure_email_list_enable is defined %}
+secure_email_list_enable={{ vsftpd_secure_email_list_enable }}
+{% endif %}
+{% if vsftpd_session_support is defined %}
+session_support={{ vsftpd_session_support }}
+{% endif %}
+{% if vsftpd_setproctitle_enable is defined %}
+setproctitle_enable={{ vsftpd_setproctitle_enable }}
+{% endif %}
+{% if vsftpd_ssl_ciphers is defined %}
+ssl_ciphers={{ vsftpd_ssl_ciphers }}
+{% endif %}
+{% if vsftpd_ssl_enable is defined %}
+ssl_enable={{ vsftpd_ssl_enable }}
+{% endif %}
+{% if vsftpd_ssl_request_cert is defined %}
+ssl_request_cert={{ vsftpd_ssl_request_cert }}
+{% endif %}
+{% if vsftpd_ssl_sslv2 is defined %}
+ssl_sslv2={{ vsftpd_ssl_sslv2 }}
+{% endif %}
+{% if vsftpd_ssl_sslv3 is defined %}
+ssl_sslv3={{ vsftpd_ssl_sslv3 }}
+{% endif %}
+{% if vsftpd_ssl_tlsv1 is defined %}
+ssl_tlsv1={{ vsftpd_ssl_tlsv1 }}
+{% endif %}
+{% if vsftpd_strict_ssl_read_eof is defined %}
+strict_ssl_read_eof={{ vsftpd_strict_ssl_read_eof }}
+{% endif %}
+{% if vsftpd_strict_ssl_write_shutdown is defined %}
+strict_ssl_write_shutdown={{ vsftpd_strict_ssl_write_shutdown }}
+{% endif %}
+{% if vsftpd_syslog_enable is defined %}
+syslog_enable={{ vsftpd_syslog_enable }}
+{% endif %}
+{% if vsftpd_tcp_wrappers is defined %}
+tcp_wrappers={{ vsftpd_tcp_wrappers }}
+{% endif %}
+{% if vsftpd_text_userdb_names is defined %}
+text_userdb_names={{ vsftpd_text_userdb_names }}
+{% endif %}
+{% if vsftpd_tilde_user_enable is defined %}
+tilde_user_enable={{ vsftpd_tilde_user_enable }}
+{% endif %}
+{% if vsftpd_trans_chunk_size is defined %}
+trans_chunk_size={{ vsftpd_trans_chunk_size }}
+{% endif %}
+{% if vsftpd_use_localtime is defined %}
+use_localtime={{ vsftpd_use_localtime }}
+{% endif %}
+{% if vsftpd_use_sendfile is defined %}
+use_sendfile={{ vsftpd_use_sendfile }}
+{% endif %}
+{% if vsftpd_user_config_dir is defined %}
+user_config_dir={{ vsftpd_user_config_dir }}
+{% endif %}
+{% if vsftpd_user_sub_token is defined %}
+user_sub_token={{ vsftpd_user_sub_token }}
+{% endif %}
+{% if vsftpd_userlist_deny is defined %}
+userlist_deny={{ vsftpd_userlist_deny }}
+{% endif %}
+{% if vsftpd_userlist_enable is defined %}
+userlist_enable={{ vsftpd_userlist_enable }}
+{% endif %}
+{% if vsftpd_userlist_file is defined %}
+userlist_file={{ vsftpd_userlist_file }}
+{% endif %}
+{% if vsftpd_validate_cert is defined %}
+validate_cert={{ vsftpd_validate_cert }}
+{% endif %}
+{% if vsftpd_virtual_use_local_privs is defined %}
+virtual_use_local_privs={{ vsftpd_virtual_use_local_privs }}
+{% endif %}
+{% if vsftpd_vsftpd_log_file is defined %}
+vsftpd_log_file={{ vsftpd_vsftpd_log_file }}
+{% endif %}
+{% if vsftpd_write_enable is defined %}
+write_enable={{ vsftpd_write_enable }}
+{% endif %}
+{% if vsftpd_xferlog_enable is defined %}
+xferlog_enable={{ vsftpd_xferlog_enable }}
+{% endif %}
+{% if vsftpd_xferlog_file is defined %}
+xferlog_file={{ vsftpd_xferlog_file }}
+{% endif %}
+{% if vsftpd_xferlog_std_format is defined %}
+xferlog_std_format={{ vsftpd_xferlog_std_format }}
+{% endif %}
