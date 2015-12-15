@@ -1,8 +1,0 @@
----
-#work in progress
-
-- name: Ensure sshd is enabled and started
-  service:
-    name: sshd
-    enabled: yes
-    state: started

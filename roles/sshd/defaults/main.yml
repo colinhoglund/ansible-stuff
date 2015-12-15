@@ -1,0 +1,5 @@
+---
+
+sshd_challengeresponseauthentication: 'no'
+sshd_usepam: 'yes'
+sshd_x11forwarding: 'yes'

@@ -1,0 +1,11 @@
+---
+# test playbook for sshd role
+
+- hosts: "{{hosts}}"
+  become: true
+  vars:
+    sshd_match_block: |
+      Match group ftp
+        X11Forwarding no
+  roles:
+    - sshd

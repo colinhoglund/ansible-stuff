@@ -1,5 +1,7 @@
+{% if sshd_acceptenv is defined %}
 {% for env in sshd_acceptenv %}
 AcceptEnv {{ env }}
+{% endfor %}
 {% endif %}
 {% if sshd_addressfamily is defined %}
 AddressFamily {{ sshd_addressfamily }}
@@ -79,8 +81,10 @@ HostbasedUsesNameFromPacketOnly {{ sshd_hostbasedusesnamefrompacketonly }}
 {% if sshd_hostcertificate is defined %}
 HostCertificate {{ sshd_hostcertificate }}
 {% endif %}
+{% if sshd_hostkey is defined %}
 {% for key in sshd_hostkey %}
 HostKey {{ key }}
+{% endfor %}
 {% endif %}
 {% if sshd_hostkeyagent is defined %}
 HostKeyAgent {{ sshd_hostkeyagent }}
@@ -196,8 +200,8 @@ ServerKeyBits {{ sshd_serverkeybits }}
 {% if sshd_strictmodes is defined %}
 StrictModes {{ sshd_strictmodes }}
 {% endif %}
-{% if sshd_sftp_subsystem is defined %}
-Subsystem sftp {{ sshd_subsystem }}
+{% if sshd_subsystem_sftp is defined %}
+Subsystem sftp {{sshd_subsystem_sftp}}
 {% endif %}
 {% if sshd_syslogfacility is defined %}
 SyslogFacility {{ sshd_syslogfacility }}
@@ -234,4 +238,7 @@ X11UseLocalhost {{ sshd_x11uselocalhost }}
 {% endif %}
 {% if sshd_xauthlocation is defined %}
 XAuthLocation {{ sshd_xauthlocation }}
+{% endif %}
+{% if sshd_match_block is defined %}
+{{sshd_match_block}}
 {% endif %}

@@ -1,0 +1,9 @@
+---
+
+sshd_service_name: ssh
+
+sshd_acceptenv:
+  - 'lang lc_*'
+sshd_permitrootlogin: without-password
+sshd_printmotd: 'no'
+sshd_subsystem_sftp: /usr/lib/openssh/sftp-server
