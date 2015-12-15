@@ -2,7 +2,7 @@
 
 - name: Get OS specific vars
   group_by:
-    key: "os_{{ ansible_os_family }}"
+    key: "vsftpd_{{ ansible_os_family }}"
 
 - include: install.yml
 - include: config.yml
