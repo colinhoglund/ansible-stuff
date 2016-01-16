@@ -1,1 +1,3 @@
 ec2.py
+ansible.cfg
+env/

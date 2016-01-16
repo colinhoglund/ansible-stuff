@@ -1,5 +1,6 @@
 ---
 
+sshd_package_name: openssh
 sshd_service_name: sshd
 
 sshd_acceptenv:
