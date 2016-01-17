@@ -1,4 +1,5 @@
 ---
+# playbook to execute all roles on all hosts in inventory
 
 - hosts: all
   become: true
