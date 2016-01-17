@@ -3,15 +3,11 @@
 - name: Get OS specific vars
   group_by:
     key: "vsftpd_{{ansible_distribution}}{{ansible_distribution_major_version}}"
-  tags:
-    - vsftpd
 
 - name: Install vsftpd package
   package:
     name: vsftpd
     state: present
-  tags:
-    - vsftpd
 
 - name: Update vsftpd.conf
   template:
@@ -22,20 +18,14 @@
     mode: 0644
   notify:
     - restart vsftpd
-  tags:
-    - vsftpd
 
 - name: Add nologin to /etc/shells
   lineinfile:
     dest: /etc/shells
     line: /usr/sbin/nologin
-  tags:
-    - vsftpd
 
 - name: Ensure vsftpd is enabled and running
   service:
     name: vsftpd
     enabled: yes
     state: running
-  tags:
-    - vsftpd

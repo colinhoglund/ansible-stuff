@@ -7,6 +7,6 @@
       Match group ftp
         X11Forwarding no
   roles:
-    - sshd
-    - supervisor
-    - vsftpd
+    - {role: sshd, tags: ssh}
+    - {role: supervisor, tags: supervisor}
+    - {role: vsftpd, tags: ftp}
