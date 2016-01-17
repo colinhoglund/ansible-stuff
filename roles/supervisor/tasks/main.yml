@@ -1,0 +1,41 @@
+---
+
+- name: Get OS specific vars
+  group_by:
+    key: "supervisor_{{ansible_distribution}}{{ansible_distribution_major_version}}"
+
+- name: Install supervisor package
+  pip:
+    name: supervisor
+
+# https://github.com/Supervisor/initscripts
+- name: Copy supervisor init script
+  template:
+    src: "{{supervisor_init_src}}"
+    dest: "{{supervisor_init_dest}}"
+    owner: root
+    group: root
+    mode: "{{supervisor_init_mode}}"
+
+- name: Ensure /etc/supervisor/ directory exists
+  file:
+    path: /etc/supervisor
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy supervisord.conf
+  template:
+    src: supervisord.conf.j2
+    dest: "{{supervisor_conf}}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart supervisor
+
+- name: Start and enable supervisor service
+  service:
+    name: supervisor
+    state: started
+    enabled: yes
