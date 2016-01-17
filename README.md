@@ -1,2 +1,2 @@
-# ansible-stuff
-A collection of various ansible related things for Centos and Ubuntu
+# Ansible 2 stuff
+A collection of Ansible tools for Centos and Ubuntu
