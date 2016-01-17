@@ -1,0 +1,5 @@
+---
+
+supervisor_init_src: init_sysv.j2
+supervisor_init_dest: /etc/init.d/supervisor
+supervisor_init_mode: 0755
