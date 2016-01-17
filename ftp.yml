@@ -1,7 +1,0 @@
----
-# test playbook for vsftpd role
-
-- hosts: "{{hosts}}"
-  become: true
-  roles:
-    - vsftpd
