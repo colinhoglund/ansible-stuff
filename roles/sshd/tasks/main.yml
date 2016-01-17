@@ -4,6 +4,10 @@
   group_by:
     key: "sshd_{{ansible_distribution}}{{ansible_distribution_major_version}}"
 
+- name: apt-get update on Ubuntu hosts
+  apt: update_cache=yes
+  when: ansible_distribution == 'Ubuntu'
+
 - name: install ssh packages
   package:
     name: "{{sshd_package_name}}"
@@ -16,8 +20,7 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restart sshd
+  notify: restart sshd
 
 - name: Ensure sshd is enabled and started
   service:
