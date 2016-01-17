@@ -3,6 +3,8 @@
 - hosts: all
   become: true
   vars:
+    aws_access_key_id: <aws_access_key_id>
+    aws_secret_access_key: <aws_secret_access_key>
     sshd_match_block: |
       Match group ftp
         X11Forwarding no
@@ -10,3 +12,4 @@
     - {role: sshd, tags: ssh}
     - {role: supervisor, tags: supervisor}
     - {role: vsftpd, tags: ftp}
+    - {role: awslogs, tags: awslogs}

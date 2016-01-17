@@ -1,0 +1,52 @@
+---
+
+- name: Download the cloudwatch logs agent
+  get_url:
+    url: https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+    dest: /tmp/awslogs-agent-setup.py
+    mode: 0755
+
+- name: Create /tmp/awslogs.conf
+  copy:
+    src: awslogs.conf
+    dest: /tmp/awslogs.conf
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Create /root/.aws directory
+  file:
+    path: /root/.aws
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Create /root/.aws/credentials
+  template:
+    src: aws_credentials.j2
+    dest: /root/.aws/credentials
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Check if awslogs is already installed
+  stat:
+    path: /var/awslogs/bin
+  register: awslogs_bin_dir
+
+- name: Run awslogs agent setup
+  become: true
+  shell: '/tmp/awslogs-agent-setup.py -n -r {{awslogs_region}} -c /tmp/awslogs.conf'
+  when: not awslogs_bin_dir.stat.exists
+  register: awslogs_exec
+
+- name: Show output of awslogs agent setup
+  debug: var=awslogs_exec.stdout_lines
+  when: not awslogs_bin_dir.stat.exists
+
+- name: Start and enable awslogs service
+  service:
+    name: awslogs
+    state: started
+    enabled: yes
