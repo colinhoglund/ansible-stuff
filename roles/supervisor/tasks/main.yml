@@ -7,6 +7,7 @@
 - name: Install supervisor package
   pip:
     name: supervisor
+    state: present
 
 # https://github.com/Supervisor/initscripts
 - name: Copy supervisor init script
@@ -15,7 +16,7 @@
     dest: "{{supervisor_init_dest}}"
     owner: root
     group: root
-    mode: "{{supervisor_init_mode}}"
+    mode: 0644
 
 - name: Ensure /etc/supervisor/ directory exists
   file:

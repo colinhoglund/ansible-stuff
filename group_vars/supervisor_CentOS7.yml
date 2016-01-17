@@ -2,4 +2,3 @@
 
 supervisor_init_src: init_systemd.j2
 supervisor_init_dest: /usr/lib/systemd/system/supervisor.service
-supervisor_init_mode: 0644
