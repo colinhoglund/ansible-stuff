@@ -1,5 +1,9 @@
 ---
 
+- name: Get OS specific vars
+  group_by:
+    key: "awslogs_{{ansible_distribution}}{{ansible_distribution_major_version}}"
+
 - name: Download the cloudwatch logs agent
   get_url:
     url: https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
@@ -45,9 +49,12 @@
   debug: var=awslogs_exec.stdout_lines
   when: not awslogs_bin_dir.stat.exists
 
-- name: Include Ubuntu logstreams
-  include: ubuntu_defaults.yml
-  when: ansible_distribution == 'Ubuntu'
+- name: Include default logstreams
+  awslogs_logstream:
+    file: "{{item}}"
+    datetime_format: '%b %d %H:%M:%S'
+  with_items: "{{awslogs_default_logstreams}}"
+  notify: restart awslogs
 
 - name: Start and enable awslogs service
   service:

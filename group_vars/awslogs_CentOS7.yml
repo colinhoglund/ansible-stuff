@@ -1,0 +1,5 @@
+---
+
+awslogs_default_logstreams:
+  - /var/log/messages
+  - /var/log/secure

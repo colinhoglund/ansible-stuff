@@ -140,14 +140,14 @@ def main():
 
     # no changes if contents have not changed
     if os.path.exists(logstream_fullpath) and logstream_contents == open(logstream_fullpath).read():
-        module.exit_json(changed=False)
+        module.exit_json(path=logstream_fullpath, changed=False)
     # no changes if check_mode enabled
     elif not module.check_mode:
         # write contents to config file
         update_file = open(logstream_fullpath, 'w')
         update_file.write(logstream_contents)
         update_file.close()
-    module.exit_json(changed=True)
+    module.exit_json(path=logstream_fullpath, changed=True)
 
 from ansible.module_utils.basic import *
 if __name__ == '__main__':
