@@ -1,0 +1,10 @@
+---
+
+- name: Include standard ubuntu logstreams
+  awslogs_logstream:
+    file: "{{item}}"
+    datetime_format: '%b %d %H:%M:%S'
+  with_items:
+    - /var/log/syslog
+    - /var/log/auth.log
+  notify: restart awslogs

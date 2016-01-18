@@ -45,6 +45,10 @@
   debug: var=awslogs_exec.stdout_lines
   when: not awslogs_bin_dir.stat.exists
 
+- name: Include Ubuntu logstreams
+  include: ubuntu_defaults.yml
+  when: ansible_distribution == 'Ubuntu'
+
 - name: Start and enable awslogs service
   service:
     name: awslogs
