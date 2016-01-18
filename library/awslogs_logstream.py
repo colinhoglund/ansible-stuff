@@ -1,6 +1,8 @@
 #!/usr/bin/python
 ''' Ansible module that creates logstreams for the Cloudwatch Logs Agent '''
 
+#TODO: get output to work with --diff flag
+
 DOCUMENTATION = '''
 ---
 module: awslogs_logstream
