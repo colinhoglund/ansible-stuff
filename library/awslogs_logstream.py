@@ -10,7 +10,7 @@ author:
     - Colin Hoglund (@colinhoglund)
 short_description: Creates logstreams for the Cloudwatch Logs Agent
 description:
-  - This module assumes you already have the Cloudwatch Logs Agent already installed
+  - This module assumes you already have the Cloudwatch Logs Agent installed
     Each logstream is stored in a separate file in the /var/awslogs/etc/config/ directory.
     (U(http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CWL_GettingStarted.html)).
 notes:
