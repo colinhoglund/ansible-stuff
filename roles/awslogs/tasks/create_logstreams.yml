@@ -1,0 +1,11 @@
+---
+
+- name: Create logstream configuration
+  template:
+    src: logstream.j2
+    dest: "/var/awslogs/etc/config/{{item | regex_replace('/', '_') | regex_replace('\\*', '')}}"
+    owner: root
+    group: root
+    mode: 0600
+  with_items: "{{logstream_files}}"
+  notify: restart awslogs
