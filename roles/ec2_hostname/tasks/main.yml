@@ -5,6 +5,7 @@
   action: ec2_facts
 
 - name: Gather instance tags
+  become: false
   local_action:
     module: ec2_tag
     resource: "{{ansible_ec2_instance_id}}"
