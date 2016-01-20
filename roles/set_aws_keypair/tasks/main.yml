@@ -1,0 +1,9 @@
+---
+# get aws access credentials from environment
+
+- local_action: shell env | grep access_key | grep aws | sort
+  register: aws_keypair
+
+- set_fact:
+    aws_access_key_id: "{{aws_keypair.stdout_lines[0].split('=')[1]}}"
+    aws_secret_access_key: "{{aws_keypair.stdout_lines[1].split('=')[1]}}"
