@@ -1,0 +1,17 @@
+---
+# Sets the hostname of an ec2 instance
+# using the value of the 'Name' tag
+
+- name: Gather instance metadata
+  action: ec2_facts
+
+- name: Gather instance tags
+  local_action:
+    module: ec2_tag
+    resource: "{{ansible_ec2_instance_id}}"
+    region: "{{ansible_ec2_placement_region}}"
+    state: list
+  register: instance_tags
+
+- hostname: name="{{instance_tags.tags.Name}}"
+  become: true

@@ -1,4 +1,5 @@
 ansible.cfg
 ec2.py
+ec2.ini
 env/
 temp.yml
