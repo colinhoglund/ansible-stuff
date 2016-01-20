@@ -2,6 +2,7 @@
 # get aws access credentials from environment
 
 - local_action: shell env | grep access_key | grep aws | sort
+  become: false
   register: aws_keypair
 
 - set_fact:

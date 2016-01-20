@@ -50,11 +50,10 @@
   when: not awslogs_bin_dir.stat.exists
 
 - name: Include default logstreams
-  awslogs_logstream:
-    file: "{{item}}"
-    datetime_format: '%b %d %H:%M:%S'
-  with_items: "{{awslogs_default_logstreams}}"
-  notify: restart awslogs
+  include: create_logstreams.yml
+  vars:
+    logstream_datetime_format: '%b %d %H:%M:%S'
+    logstream_files: "{{awslogs_default_logstreams}}"
 
 - name: Start and enable awslogs service
   service:

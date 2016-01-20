@@ -1,0 +1,29 @@
+[{{item | regex_replace('\*', '')}}]
+file = {{item}}
+datetime_format = {{logstream_datetime_format}}
+log_group_name = {{logstream_log_group_name | default(item | regex_replace('\*', ''))}}
+log_stream_name = {{logstream_log_stream_name | default('{hostname}')}}
+{% if logstream_batch_count is defined %}
+batch_count = {{logstream_batch_count}}
+{% endif %}
+{% if logstream_batch_size is defined %}
+batch_size = {{logstream_batch_size}}
+{% endif %}
+{% if logstream_buffer_duration is defined %}
+buffer_duration = {{logstream_buffer_duration}}
+{% endif %}
+{% if logstream_encoding is defined %}
+encoding = {{logstream_encoding}}
+{% endif %}
+{% if logstream_file_fingerprint_lines is defined %}
+file_fingerprint_lines = {{logstream_file_fingerprint_lines}}
+{% endif %}
+{% if logstream_initial_position is defined %}
+initial_position = {{logstream_initial_position}}
+{% endif %}
+{% if logstream_multi_line_start_pattern is defined %}
+multi_line_start_pattern = {{logstream_multi_line_start_pattern}}
+{% endif %}
+{% if logstream_time_zone is defined %}
+time_zone = {{logstream_time_zone}}
+{% endif %}

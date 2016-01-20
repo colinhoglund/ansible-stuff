@@ -1,7 +1,8 @@
 #!/usr/bin/python
 ''' Ansible module that creates logstreams for the Cloudwatch Logs Agent '''
 
-#TODO: get output to work with --diff flag
+# NOTICE: This has been replaced by roles/awslogs/tasks/create_logstreams.yml,
+#         which gives you the ability to see changes with a '--diff' flag
 
 DOCUMENTATION = '''
 ---
