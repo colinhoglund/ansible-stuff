@@ -1,0 +1,24 @@
+---
+# Playbook to execute all roles on all hosts in inventory.
+# This also serves as an example of how to use the tools in this repo.
+
+- hosts: tag_Name_example-ec2-instance
+  become: true
+  vars:
+    sshd_match_block: |
+      Match group ftp
+        X11Forwarding no
+  roles:
+    - ec2_hostname
+    - set_aws_keypair # needed for awslogs
+    - {role: awslogs, tags: awslogs}
+    - {role: sshd, tags: ssh}
+    - {role: supervisor, tags: supervisor}
+    - {role: vsftpd, tags: ftp}
+  tasks:
+    - name: Create ftp logstream
+      include: create_logstreams.yml
+      vars:
+        logstream_datetime_format: '%b %d %H:%M:%S %Y'
+        logstream_files:
+          - /var/log/vsftpd.log
