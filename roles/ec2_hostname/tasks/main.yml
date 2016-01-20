@@ -1,6 +1,5 @@
 ---
-# Sets the hostname of an ec2 instance
-# using the value of the 'Name' tag
+# Sets the hostname of an ec2 instance using the value of the 'Name' tag
 
 - name: Gather instance metadata
   action: ec2_facts
