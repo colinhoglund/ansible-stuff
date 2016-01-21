@@ -4,3 +4,8 @@
   service:
     name: supervisor
     state: restarted
+
+- name: reload supervisord
+  service:
+    name: supervisord
+    state: reloaded
