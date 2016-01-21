@@ -5,13 +5,16 @@
   action: ec2_facts
 
 - name: Gather instance tags
-  become: false
   local_action:
     module: ec2_tag
     resource: "{{ansible_ec2_instance_id}}"
     region: "{{ansible_ec2_placement_region}}"
     state: list
   register: instance_tags
+  become: false
+  when: ansible_ec2_instance_id is defined
 
-- hostname: name="{{instance_tags.tags.Name}}"
+- name: Set local hostname
+  hostname: name="{{instance_tags.tags.Name}}"
   become: true
+  when: ansible_ec2_instance_id is defined
