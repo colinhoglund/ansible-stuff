@@ -1,9 +1,10 @@
 ---
 
 - name: Install python build dependencies
-  apt: name="{{python_basename}}" state=build-dep update_cache=true
+  apt: name="{{item}}" state=latest update_cache=true
+  with_items: "{{python_dependencies}}"
 
-- name: Copy python tarball
+- name: Download python tarball
   get_url: url="{{python_tar_url}}" dest=/tmp/
 
 - name: Unpack python tarball
@@ -14,3 +15,12 @@
   args:
     chdir: "/tmp/{{python_tar_dir}}"
     creates: "/usr/local/bin/{{python_basename}}"
+
+- name: Download get-pip.py
+  get_url: url=https://bootstrap.pypa.io/get-pip.py dest=/tmp/
+
+- name: Install pip
+  command: "{{python_basename}} /tmp/get-pip.py"
+
+- name: Install virtualenv
+  pip: name=virtualenv state=latest
