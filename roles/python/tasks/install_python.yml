@@ -10,8 +10,10 @@
 - name: Unpack python tarball
   unarchive: src="/tmp/{{python_tar_dir}}.tgz" dest=/tmp/ copy=no
 
+- name: Ensure python prefix directory exists
+  file: path="{{python_configure_prefix}}" state=directory
+
 - name: Build python
-  shell: './configure; make; make install'
+  shell: "./configure --prefix={{python_configure_prefix}}; make; make install"
   args:
     chdir: "/tmp/{{python_tar_dir}}"
-    creates: "/usr/local/bin/{{python_basename}}"

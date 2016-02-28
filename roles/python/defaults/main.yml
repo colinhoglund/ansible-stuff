@@ -1,11 +1,18 @@
 ---
 
+# Required vars
 python_version: ''
+
+# Optional vars
+python_configure_prefix: '/usr/local'
+python_global_packages: []
+
+# Immutables
 python_major_version: "{{python_version[0]}}"
+python_path: "{{python_configure_prefix}}/bin/python{{python_major_version}}"
+pip_path: "{{python_configure_prefix}}/bin/pip{{python_major_version}}"
 python_tar_dir: "Python-{{python_version}}"
 python_tar_url: "https://www.python.org/ftp/python/{{python_version}}/{{python_tar_dir}}.tgz"
-python_global_packages:
-  - virtualenv
 python_dependencies:
   - build-essential
   - libbz2-dev

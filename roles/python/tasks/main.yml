@@ -1,42 +1,31 @@
 ---
 
-# Setup internal facts
-- set_fact:
-    python_basename: python
-    pip_basename: pip
-  when: python_major_version == '2'
-- set_fact:
-    python_basename: python3
-    pip_basename: pip3
-  when: python_major_version == '3'
-
 # Install python
-- name: Check for local python
-  command: "which {{python_basename}}"
+- name: Check if python is already installed
+  stat: path="{{python_path}}"
   register: python_installed
-  ignore_errors: True
-
-- name: Get installed python version
-  shell: "{{python_basename}} -V 2>&1 | awk '{print $2}'"
-  register: python_installed_version
-  ignore_errors: True
 
 - name: Install python
   include: install_python.yml
-  when: (python_installed.stdout | dirname != '/usr/local/bin' and
-         python_installed_version.stdout != python_version)
+  when: python_installed.stat.exists == false
 
-# Install pip
-- name: Check for pip
-  command: "which {{pip_basename}}"
+# Install/upgrade pip
+- name: Check if pip is already installed
+  stat: path="{{pip_path}}"
   register: pip_installed
-  ignore_errors: True
 
 - name: Install pip
   include: install_pip.yml
-  when: pip_installed.rc != 0
+  when: pip_installed.stat.exists == false
+
+- name: Upgrade pip
+  pip: name=pip state=latest executable="{{pip_path}}"
 
 # Install packages
+- name: Install/upgrade virtualenv
+  pip: name=virtualenv state=latest executable="{{pip_path}}"
+  when: python_major_version == '2'
+
 - name: Install global packages
-  pip: name="{{item}}" state=latest executable="{{pip_basename}}"
+  pip: name="{{item}}" state=present executable="{{pip_path}}"
   with_items: "{{python_global_packages}}"
