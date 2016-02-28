@@ -38,5 +38,5 @@
 
 # Install packages
 - name: Install global packages
-  pip: name="{{item}}" state=latest
+  pip: name="{{item}}" state=latest executable="{{pip_basename}}"
   with_items: "{{python_global_packages}}"
