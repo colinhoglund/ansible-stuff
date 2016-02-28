@@ -5,6 +5,7 @@
   with_items: "{{python_dependencies}}"
   when: ansible_os_family == 'Debian'
 
+# yum groups have issues installing in a with_items
 - name: Install RedHat development tools
   yum: name='@development tools' state=present update_cache=true
   when: ansible_os_family == 'RedHat'
