@@ -5,8 +5,3 @@
 
 - name: Install pip
   command: "{{python_basename}} /tmp/get-pip.py"
-
-- name: Install global packages
-  pip: name="{{item}}" state=latest
-  with_items:
-    - virtualenv
