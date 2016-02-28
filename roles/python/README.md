@@ -1,6 +1,6 @@
 This role has been tested on ubuntu 14.04 and centos 7
 
-Install python 2 and 3 with custom prefix and global packages
+Install python 2 and 3 with custom prefix and global packages:
 ```
 ---
 
