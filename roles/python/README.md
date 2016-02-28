@@ -1,4 +1,4 @@
-This role has only been tested on ubuntu
+This role has only been tested on ubuntu 14.04
 
 Install python 2 and 3
 ```
