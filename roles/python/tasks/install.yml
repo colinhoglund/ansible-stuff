@@ -1,0 +1,16 @@
+---
+
+- name: Install python build dependencies
+  apt: name="{{python_basename}}" state=build-dep update_cache=true
+
+- name: Copy python tarball
+  get_url: url="{{python_tar_url}}" dest=/tmp/
+
+- name: Unpack python tarball
+  unarchive: src="/tmp/{{python_tar_dir}}.tgz" dest=/tmp/ copy=no
+
+- name: Build python
+  shell: './configure; make; make install'
+  args:
+    chdir: "/tmp/{{python_tar_dir}}"
+    creates: "/usr/local/bin/{{python_basename}}"

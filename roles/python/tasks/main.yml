@@ -1,14 +1,24 @@
 ---
 
-- name: install python packages
-  package:
-    name: "{{item}}"
-    state: present
-  with_items:
-    - python
-    - python-setuptools
+# Setup internal facts
+- set_fact:
+    python_major_version: "{{python_version.split('.')[0]}}"
+- set_fact:
+    python_basename: python
+  when: python_major_version == '2'
+- set_fact:
+    python_basename: python3
+  when: python_major_version == '3'
 
-- name: install pip package manager
-  easy_install:
-    name: pip
-    state: present
+- name: Check for local python install
+  command: "which {{python_basename}}"
+  register: python_installed
+
+- name: Get installed python version
+  shell: "{{python_basename}} -V 2>&1 | awk '{print $2}'"
+  register: python_installed_version
+
+- name: Install python
+  include: install.yml
+  when: (python_installed.stdout | dirname != '/usr/local/bin' and
+         python_installed_version.stdout != python_version)

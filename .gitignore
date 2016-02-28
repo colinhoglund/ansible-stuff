@@ -1,5 +1,8 @@
+*.retry
+.python-version
 ansible.cfg
-ec2.py
 ec2.ini
+ec2.py
 env/
+inventory.local
 temp.yml

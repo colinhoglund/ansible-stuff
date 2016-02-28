@@ -1,0 +1,5 @@
+---
+
+python_version: ''
+python_tar_dir: "Python-{{python_version}}"
+python_tar_url: "https://www.python.org/ftp/python/{{python_version}}/{{python_tar_dir}}.tgz"
