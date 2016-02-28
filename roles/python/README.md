@@ -1,3 +1,5 @@
+This role has only been tested on ubuntu
+
 Install python 2 and 3
 ```
   roles:
