@@ -5,20 +5,33 @@
     python_major_version: "{{python_version[0]}}"
 - set_fact:
     python_basename: python
+    pip_basename: pip
   when: python_major_version == '2'
 - set_fact:
     python_basename: python3
+    pip_basename: pip3
   when: python_major_version == '3'
 
-- name: Check for local python install
+- name: Check for local python
   command: "which {{python_basename}}"
   register: python_installed
+  ignore_errors: True
 
 - name: Get installed python version
   shell: "{{python_basename}} -V 2>&1 | awk '{print $2}'"
   register: python_installed_version
+  ignore_errors: True
 
 - name: Install python
-  include: install.yml
+  include: install_python.yml
   when: (python_installed.stdout | dirname != '/usr/local/bin' and
          python_installed_version.stdout != python_version)
+
+- name: Check for pip
+  command: "which {{pip_basename}}"
+  register: pip_installed
+  ignore_errors: True
+
+- name: Install pip
+  include: install_pip.yml
+  when: pip_installed.rc != 0

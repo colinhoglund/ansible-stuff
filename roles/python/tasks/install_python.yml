@@ -15,12 +15,3 @@
   args:
     chdir: "/tmp/{{python_tar_dir}}"
     creates: "/usr/local/bin/{{python_basename}}"
-
-- name: Download get-pip.py
-  get_url: url=https://bootstrap.pypa.io/get-pip.py dest=/tmp/
-
-- name: Install pip
-  command: "{{python_basename}} /tmp/get-pip.py"
-
-- name: Install virtualenv
-  pip: name=virtualenv state=latest
