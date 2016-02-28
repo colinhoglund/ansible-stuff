@@ -1,0 +1,13 @@
+---
+
+python_dependencies:
+  - bzip2-devel
+  - gdbm-devel
+  - libdb-devel
+  - ncurses-devel
+  - openssl-devel
+  - readline-devel
+  - sqlite-devel
+  - tk-devel
+  - xz-devel
+  - zlib-devel

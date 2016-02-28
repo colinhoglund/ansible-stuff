@@ -1,8 +1,18 @@
 ---
 
-- name: Install python build dependencies
+- name: Install Debian dependencies
   apt: name="{{item}}" state=latest update_cache=true
   with_items: "{{python_dependencies}}"
+  when: ansible_os_family == 'Debian'
+
+- name: Install RedHat development tools
+  yum: name='@development tools' state=present update_cache=true
+  when: ansible_os_family == 'RedHat'
+
+- name: Install RedHat dependencies
+  yum: name="{{item}}" state=latest
+  with_items: "{{python_dependencies}}"
+  when: ansible_os_family == 'RedHat'
 
 - name: Download python tarball
   get_url: url="{{python_tar_url}}" dest=/tmp/
