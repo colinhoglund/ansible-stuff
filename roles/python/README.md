@@ -1,5 +1,3 @@
-Examples:
-
 Install python 2 and 3
 ```
   roles:
