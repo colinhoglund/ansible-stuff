@@ -7,7 +7,7 @@ python_version: ''
 python_configure_prefix: '/usr/local'
 python_global_packages: []
 
-# Immutables
+# Internal vars
 python_major_version: "{{python_version[0]}}"
 python_path: "{{python_configure_prefix}}/bin/python{{python_major_version}}"
 pip_path: "{{python_configure_prefix}}/bin/pip{{python_major_version}}"
