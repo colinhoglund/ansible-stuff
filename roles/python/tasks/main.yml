@@ -2,7 +2,7 @@
 
 # Setup internal facts
 - set_fact:
-    python_major_version: "{{python_version.split('.')[0]}}"
+    python_major_version: "{{python_version[0]}}"
 - set_fact:
     python_basename: python
   when: python_major_version == '2'
