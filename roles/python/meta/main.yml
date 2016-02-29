@@ -1,0 +1,15 @@
+---
+
+galaxy_info:
+  author: colinhoglund
+  categories:
+    - development
+  description: Build Python from source
+  license: MIT
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Ubuntu
+    versions:
+    - trusty
